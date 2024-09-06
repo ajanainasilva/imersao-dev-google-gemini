@@ -1,6 +1,6 @@
 ---
 
-# 🌟 Sugestão de Doramas - Imersão Dev com Google Gemini 🌟
+**🌟 Sugestão de Doramas - Imersão Dev com Google Gemini 🌟
 
 **✨ Título:** Encontre seu dorama perfeito com este buscador incrível! 
 
