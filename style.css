@@ -4,15 +4,12 @@
 /* Estiliza o corpo da página */
 body {
     font-family: "Poppins", sans-serif;
-    /* Fonte mais suave */
     background-color: #FCE4EC;
-    /* Fundo rosa pastel */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /* Garante que a página ocupe toda a altura */
     margin: 0;
     padding: 0;
 }
@@ -20,13 +17,10 @@ body {
 /* Estiliza os títulos h1 */
 h1 {
     font-size: 3rem;
-    /* Tamanho da fonte maior para destaque */
     color: #FF4081;
-    /* Rosa mais vivo para o título */
     text-align: center;
     letter-spacing: 0.2rem;
     text-shadow: 2px 2px #F8BBD0;
-    /* Adiciona sombra leve ao texto */
 }
 
 /* Estiliza as seções da página */
@@ -43,15 +37,13 @@ section input {
     border: none;
     padding: 1rem;
     border-radius: 2rem;
-    /* Aumenta a curvatura das bordas */
     margin-bottom: 1rem;
     color: #6A1B9A;
-    /* Cor roxa suave */
     font-size: 1rem;
-    background-color: #FCE4EC;
-    /* Fundo rosa claro */
+    background-color: #FFFFFF; /* Fundo branco */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+    /* Remove qualquer borda interna ou sombra indesejada */
+    outline: none; /* Remove o contorno padrão ao focar */
 }
 
 /* Estiliza os botões dentro das seções */
@@ -60,7 +52,6 @@ section button {
     border: none;
     border-radius: 2rem;
     background-color: #FF80AB;
-    /* Rosa pastel */
     color: #FFFFFF;
     font-size: 1rem;
     cursor: pointer;
@@ -70,7 +61,6 @@ section button {
 /* Adiciona efeito hover ao botão de pesquisa */
 section button:hover {
     background-color: #F50057;
-    /* Cor mais forte ao passar o mouse */
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
@@ -81,9 +71,7 @@ section button:hover {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 1.5rem;
-    /* Arredondamento suave */
     background-color: #FFF3E0;
-    /* Fundo laranja claro */
 }
 
 /* Estiliza cada item de resultado */
@@ -93,32 +81,27 @@ section button:hover {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    /* Sombra mais leve */
     display: flex;
     flex-direction: column;
-    /* Faz com que o conteúdo interno fique em coluna */
 }
 
 /* Estiliza os títulos dentro dos itens de resultado */
 .item-resultado h2 {
     font-size: 1.8rem;
     color: #F06292;
-    /* Rosa suave */
     margin: 0;
-    /* Remove margens padrão */
 }
 
 /* Estiliza os links dentro dos itens de resultado */
 .item-resultado a {
     text-decoration: none;
     color: #D81B60;
-    /* Cor mais suave nos links */
     transition: color 0.3s ease;
 }
+
 /* Estiliza os links quando são passados o mouse sobre */
 .item-resultado a:hover {
     color: #AD1457;
-    /* Cor mais forte ao passar o mouse */
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
@@ -130,29 +113,21 @@ section button:hover {
 /* Estiliza informações adicionais dentro dos itens de resultado */
 .item-resultado .info-adicional {
     color: #D81B60;
-    /* Cor rosa suave */
     font-size: 0.9rem;
-    /* Tamanho da fonte */
     margin: 0.3rem 0;
-    /* Espaçamento entre as informações */
     font-weight: 500;
-    /* Um pouco mais de destaque */
 }
 
 /* Define o estilo visual da imagem dentro do item de resultado */
 .item-resultado img {
     width: 150px;
-    /* Largura fixa para a imagem */
     height: auto;
-    /* Mantém a proporção da imagem */
     border-radius: 0.5rem;
-    /* Arredondamento nas bordas da imagem */
 }
 
 /* Estiliza o rodapé da página */
 footer {
     background-color: #F8BBD0;
-    /* Rosa suave */
     color: #FFFFFF;
     text-align: center;
     padding: 1rem;
@@ -160,35 +135,36 @@ footer {
     position: absolute;
     bottom: 0;
     font-size: 1rem;
+    margin-bottom: 0; /* Remove a margem inferior do rodapé */
 }
 
 /* Responsividade para celulares */
 @media (max-width: 480px) {
 
     h1 {
-        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
-        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
     }
 
     section input {
-        width: 17rem; /* Largura total dos inputs em telas pequenas */
+        width: 17rem;
     }
 
     section button {
-        padding: 0.6rem 1rem; /* Espaçamento interno do botão em telas pequenas */
-        font-size: 0.9rem; /* Tamanho da fonte do botão em telas pequenas */
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 
     .resultados-pesquisa {
-        width: 90%; /* Largura da caixa de resultados em telas pequenas */
-        height: 50vh; /* Altura da caixa de resultados em telas pequenas */
+        width: 90%;
+        height: 50vh;
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem; /* Tamanho da fonte dos títulos em telas pequenas */
+        font-size: 1.1rem;
     }
 
     footer {
-        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+        font-size: 0.9rem;
     }
 }
