@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Estiliza os títulos h1 */
@@ -38,7 +39,7 @@ section input {
     padding: 1rem;
     border-radius: 2rem;
     margin-bottom: 1rem;
-    color: #bb8ed7;
+    color: #6A1B9A;
     font-size: 1rem;
     background-color: #FFFFFF; /* Fundo branco */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -72,14 +73,6 @@ section button:hover {
     padding: 1rem;
     border-radius: 1.5rem;
     background-color: #FFF3E0;
-    
-}
-
-/* Estiliza a mensagem de "nada encontrado" na seção de resultados */
-.resultados-pesquisa p {
-    color: #F50057; /* Altere para a cor que deseja */
-    font-size: 1rem; /* Ajuste o tamanho da fonte, se necessário */
-    text-align: center; /* Centraliza o texto, se desejar */
 }
 
 /* Estiliza cada item de resultado */
@@ -114,7 +107,7 @@ section button:hover {
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #bb8ed7;
+    color: #7B1FA2;
     margin: 0.5rem 0;
 }
 
@@ -146,38 +139,33 @@ footer {
     margin-bottom: 0; /* Remove a margem inferior do rodapé */
 }
 
-/* Para tablets */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    section input {
-        width: 22rem;
-    }
-
-    .resultados-pesquisa {
-        width: 80%;
-        min-height: 60vh;
-        flex-grow: 1;
-    }
-
-    .item-resultado h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Para telas menores */
+/* Responsividade para celulares */
 @media (max-width: 480px) {
+
     h1 {
         font-size: 1.8rem;
+        letter-spacing: 0.1rem;
     }
 
     section input {
         width: 17rem;
     }
 
+    section button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
     .resultados-pesquisa {
         width: 90%;
+        height: 50vh;
+    }
+
+    .item-resultado h2 {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
     }
 }
