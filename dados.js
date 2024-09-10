@@ -130,5 +130,17 @@ let dados = [
         plataforma: "Netflix",
         nota: 9.0,
         imagem: "https://i.pinimg.com/736x/cc/c9/eb/ccc9eb53fed831cbc4fce6293c4441f3.jpg"
+    },
+    {
+        titulo: "Alquimia das Almas",
+        descricao: "Uma jovem guerreira, com memórias perdidas, reencarna em um corpo frágil e se envolve em uma série de mistérios e intrigas em um reino mágico.",
+        link: "https://pt.wikipedia.org/wiki/Alchemy_of_Souls",
+        tags: "fantasia romance ação drama",
+        ano: 2022,
+        episódios: 30,
+        elenco: ["Lee Jae-wook", "Jung So-min", "Go Yoon-jung"],
+        plataforma: "Netflix", 
+        nota: 4.5, 
+        imagem: "https://upload.wikimedia.org/wikipedia/pt/c/cf/Alchemy_of_Souls_tvN.jpg" 
     }
 ];
