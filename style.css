@@ -1,10 +1,18 @@
+/* Definição das cores */
+:root {
+    --cor-principal: #FF4081;
+    --cor-fundo: #FCE4EC;
+    --cor-branco: #FFFFFF;
+    --cor-cinza: #F8BBD0;
+}
+
 /* Importa as fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Poppins:wght@300&display=swap');
 
 /* Estiliza o corpo da página */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #FCE4EC;
+    background-color: var(--cor-fundo);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,10 +26,10 @@ body {
 /* Estiliza os títulos h1 */
 h1 {
     font-size: 3rem;
-    color: #FF4081;
+    color: var(--cor-principal);
     text-align: center;
     letter-spacing: 0.2rem;
-    text-shadow: 2px 2px #F8BBD0;
+    text-shadow: 2px 2px var(--cor-cinza);
 }
 
 /* Estiliza as seções da página */
@@ -39,12 +47,11 @@ section input {
     padding: 1rem;
     border-radius: 2rem;
     margin-bottom: 1rem;
-    color: #6A1B9A;
+    color: var(--cor-principal);
     font-size: 1rem;
-    background-color: #FFFFFF; /* Fundo branco */
+    background-color: var(--cor-branco);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    /* Remove qualquer borda interna ou sombra indesejada */
-    outline: none; /* Remove o contorno padrão ao focar */
+    outline: none;
 }
 
 /* Estiliza os botões dentro das seções */
@@ -52,8 +59,8 @@ section button {
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 2rem;
-    background-color: #FF80AB;
-    color: #FFFFFF;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -73,11 +80,23 @@ section button:hover {
     padding: 1rem;
     border-radius: 1.5rem;
     background-color: #FFF3E0;
+    border: 1px solid var(--cor-cinza);
 }
 
+/* Estilo para a mensagem de erro quando nenhum dorama é encontrado */
+.mensagem {
+    color: var(--cor-principal); 
+    background-color: #FFF3E0; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    font-weight: bold; 
+    font-family: "Poppins", sans-serif; 
+    text-align: center;
+}
 /* Estiliza cada item de resultado */
 .item-resultado {
-    background: #FFFFFF;
+    background: var(--cor-branco);
     border-radius: 1rem;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -107,7 +126,7 @@ section button:hover {
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #7B1FA2;
+    color: #D81B60;
     margin: 0.5rem 0;
 }
 
@@ -124,31 +143,31 @@ section button:hover {
     width: 150px;
     height: auto;
     border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #F8BBD0;
-    color: #FFFFFF;
+    background-color: var(--cor-cinza);
+    color: var(--cor-branco);
     text-align: center;
     padding: 1rem;
     width: 100%;
     position: absolute;
     bottom: 0;
     font-size: 1rem;
-    margin-bottom: 0; /* Remove a margem inferior do rodapé */
+    margin-bottom: 0;
+    z-index: 10;
 }
 
 /* Responsividade para celulares */
-@media (max-width: 480px) {
-
+@media (max-width: 768px) { /* Tablets */
     h1 {
-        font-size: 1.8rem;
-        letter-spacing: 0.1rem;
+        font-size: 2.5rem;
     }
-
+    
     section input {
-        width: 17rem;
+        width: 90%; 
     }
 
     section button {
@@ -162,10 +181,67 @@ footer {
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     footer {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) { /* Celulares */
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    section input {
+        width: 90%; 
+        padding: 0.8rem;
+    }
+
+    section button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .resultados-pesquisa {
+        width: 95%;
+        height: 60vh;
+    }
+
+    .item-resultado h2 {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) { /* Dispositivos muito pequenos */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    section input {
+        padding: 0.5rem;
+    }
+
+    section button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .resultados-pesquisa {
+        height: 70vh;
+    }
+
+    .item-resultado h2 {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
     }
 }

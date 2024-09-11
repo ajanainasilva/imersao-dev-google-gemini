@@ -1,12 +1,16 @@
 function pesquisar() {
     // Obtém a seção HTML onde os resultados serão exibidos
     let section = document.getElementById("resultados-pesquisa");
+    section.innerHTML = ""; // Limpa resultados anteriores
 
-    let campoPesquisa = document.getElementById("campo-pesquisa").value;
+    let campoPesquisa = document.getElementById("campo-pesquisa").value.trim();
 
-    // se campoPesquisa for uma string sem nada
+    // Se campoPesquisa for uma string vazia
     if (!campoPesquisa) {
-        section.innerHTML = "<p>Nada foi encontrado. Você precisa digitar o nome de um dorama</p>";
+        const mensagem = document.createElement("div");
+        mensagem.className = "mensagem"; // Certifique-se de adicionar a classe correta
+        mensagem.textContent = "Nada foi encontrado. Você precisa digitar o nome de um dorama.";
+        section.appendChild(mensagem); // Adiciona a mensagem ao final da seção
         return;
     }
 
@@ -21,14 +25,14 @@ function pesquisar() {
         const descricao = dado.descricao.toLowerCase();
         const tags = dado.tags.toLowerCase();
 
-        // se titulo includes campoPesquisa
+        // Se titulo inclui campoPesquisa
         if (titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa) || tags.includes(campoPesquisa)) {
-            // cria um novo elemento com mais informações
+            // Cria um novo elemento com mais informações
             resultados += `
             <div class="item-resultado">
                 <img src="${dado.imagem}" alt="${dado.titulo}" class="imagem-dorama">
                 <h2>
-                    <a href="#" target="_blank">${dado.titulo}</a>
+                    <a href="${dado.link}" target="_blank">${dado.titulo}</a>
                 </h2>
                 <p class="descricao-meta">${dado.descricao}</p>
                 <p class="info-adicional">🗓️ Ano: ${dado.ano}</p>
@@ -36,16 +40,20 @@ function pesquisar() {
                 <p class="info-adicional">👥 Elenco: ${dado.elenco.join(", ")}</p>
                 <p class="info-adicional">📺 Plataforma: ${dado.plataforma}</p>
                 <p class="info-adicional">⭐ Nota: ${dado.nota}</p>
-                <a href=${dado.link} target="_blank">Mais informações</a>
+                <a href="${dado.link}" target="_blank">Mais informações</a>
             </div>
         `;
         }
     }
 
+    // Se não houver resultados
     if (!resultados) {
-        resultados = "<p>Nada foi encontrado. Você precisa digitar o nome de um dorama</p>";
+        const mensagem = document.createElement("div");
+        mensagem.className = "mensagem";
+        mensagem.textContent = "Nada foi encontrado. Você precisa digitar o nome de um dorama.";
+        section.appendChild(mensagem);
+    } else {
+        // Atribui os resultados gerados à seção HTML
+        section.innerHTML = resultados;
     }
-
-    // Atribui os resultados gerados à seção HTML
-    section.innerHTML = resultados;
 }

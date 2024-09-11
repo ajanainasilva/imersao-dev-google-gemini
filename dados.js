@@ -137,7 +137,7 @@ let dados = [
         link: "https://pt.wikipedia.org/wiki/Alchemy_of_Souls",
         tags: "fantasia romance ação drama",
         ano: 2022,
-        episódios: 30,
+        episodios: 30,
         elenco: ["Lee Jae-wook", "Jung So-min", "Go Yoon-jung"],
         plataforma: "Netflix", 
         nota: 4.5, 
